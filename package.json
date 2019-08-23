@@ -1,0 +1,49 @@
+{
+  "name": "lucidly",
+  "version": "0.0.2",
+  "description": "A filesystem watcher for local Dreamtsoft codebases.",
+  "keywords": [],
+  "main": "dist/index.js",
+  "bin": {
+    "lucidly": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "bili",
+    "local-publish": "yalc publish",
+    "prepublishOn": "build",
+    "watch": "nodemon -x 'yarn run babel && yalc push'",
+    "babel": "yarn && babel ./source --out-dir ./dist"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/plugin-transform-runtime": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@orchatect/standards": "^0.0.2",
+    "axios": "^0.19.0",
+    "babel-plugin-jsx-control-statements": "^4.0.0",
+    "babel-plugin-transform-dev-warning": "^0.1.1",
+    "bili": "^4.8.1",
+    "dsfs-remote": "^0.1.0",
+    "nodemon": "^1.19.1",
+    "path-exists": "^4.0.0",
+    "sane": "^4.1.0"
+  },
+  "devDependencies": {
+    "typescript": "3.3.3"
+  },
+  "prettier": "@orchatect/standards/prettier.config",
+  "nodemonConfig": {
+    "ignore": [
+      "dist/*",
+      "package.json",
+      "README.md"
+    ],
+    "delay": "500"
+  }
+}
